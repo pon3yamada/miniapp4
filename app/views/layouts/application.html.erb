@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Miniapp4</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+ <nav>
+    <div class="nav-wrapper , #0277bd light-blue darken-3">
+      <%=link_to "BLOG", root_path, class: "brand-logo center" %>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <% if user_signed_in? %>
+      <li><%= link_to "sing out", destroy_user_session_path, method: :delete %></li>
+      <li><%= link_to "new" , new_blog_path , class: "post" %></li>
+      <% else %>
+      <li><%= link_to "sing in", user_session_path, class: "post" %></li>
+      <li><%= link_to "sing up", new_user_registration_path, class: "post" %></li>
+      </ul>
+    </div>
+
+    <% end %>
+  </nav>
+
+    <%= yield %>
+
+  </body>
+</html>

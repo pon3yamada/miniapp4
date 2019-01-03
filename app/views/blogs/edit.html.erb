@@ -1,0 +1,24 @@
+
+<div class='container_middle'>
+  <div class="row">
+      <div class="col s12">
+        <div class="card #eeeeee grey lighten-3">
+          <div class="card-content black-text">
+            <h5>
+            編集
+            </h5>
+            <%= form_with model: @blog do |f| %>
+            <!-- <span class="form-group"></span> -->
+            <%= f.label :title %>
+            <%= f.text_field :title, class: 'form-control',id: 'blog_name' %>
+            <!-- <span class="form-group"></span> -->
+            <%= f.label :text %>
+            <%= f.text_area :text, rows:5, class: 'form-control',id: 'blog_description' %>
+            <%= f.submit nil, class: 'btn-primary' %>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</div>

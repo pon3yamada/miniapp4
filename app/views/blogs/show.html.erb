@@ -1,0 +1,18 @@
+<div class='container_middle'>
+  <div class="row">
+      <div class="col s12">
+        <div class="card #eeeeee grey lighten-3">
+          <div class="card-content black-text">
+            <span class="blog-title"> <%= @blog.title %> </span>
+            <p><%= @blog.text %></p>
+          </div>
+            <div class="card-action">
+          <% if user_signed_in? && current_user.id == @blog.user_id %>
+              <%= link_to "編集", edit_blog_path(@blog),class: "waves-effect waves-light btn-small #1a237e indigo darken-4",method: :get %>
+              <%= link_to "削除", blog_path , class: "waves-effect waves-light btn-small #1a237e indigo darken-4",method: :delete %>
+          <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+@import "materialize";
+@import "materialize/components/color-variables";
+$primary-color: color("blue", "lighten-2") !default;
+$secondary-color: color("yellow", "base") !default;
+@import 'materialize';
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+.container_middle {
+  height: calc(100vh - 280px);
+  width: 900px;
+  margin: auto;
+}
+
+li {
+  list-style: none;
+}
+
+.pagination{
+  background-color : transparent;
+  color: black;
+  nav {
+        text-align: center;
+    span {
+      a {
+        color: black;
+      }
+    }
+  }
+}
